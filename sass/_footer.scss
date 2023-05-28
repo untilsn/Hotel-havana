@@ -1,26 +1,33 @@
 .wrapper {
   .footer {
     margin-top: 60px;
-    .container {
-      .scroll-top {
-        i {
-          position: fixed;
-          right: 30px;
-          bottom: 15px;
-          padding: 16px;
-          border-radius: 50%;
-          background-color: $sub-color;
-          color: $main-color;
-          pointer-events: none;
-          transition: all 0.4s;
-          opacity: 0;
-          &.active {
-            opacity: 1;
-            bottom: 30px;
-            pointer-events: auto;
-          }
-        }
+    .scroll-top {
+      background-color: $sub-color;
+      position: fixed;
+      bottom: 16px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: $main-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+      z-index: 100;
+      i {
+        color: $main-color;
       }
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: 32px;
+      }
+    }
+    .container {
       .box-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -39,9 +46,16 @@
         margin-top: 80px;
         color: $sub-color;
       }
+
+      &.active {
+        opacity: 1;
+        bottom: 30px;
+        pointer-events: auto;
+      }
     }
   }
 }
+
 @media screen and (max-width: 415px) {
   .wrapper {
     .footer {
